@@ -121,6 +121,8 @@ def Viterbi(sentence,array_pi,array_a,array_b):
             else:
                 array_b[state]['end'] = -3.14e+100
         for state0 in STATES:
+            # prob为state1->state0->sentence[i]的概率
+            # i对应的state
             items = []
             # if sentence[i] not in word_set:
             #     array_b[state0][sentence[i]] = -3.14e+100
@@ -129,6 +131,7 @@ def Viterbi(sentence,array_pi,array_a,array_b):
             # print(sentence[i] + state0)
             # print(array_b[state0][sentence[i]])
             for state1 in STATES:
+                #i-1对应的state
                 # if tab[i-1][state1] == -3.14e+100:
                 #     continue
                 # else:
